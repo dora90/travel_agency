@@ -1,0 +1,256 @@
+:root {
+    --body-font: 'Montserrat', sans-serif;
+    --header-font: 'Montserrat', sans-serif;
+    --black: rgb(27, 27, 27);
+    --orange: aliceblue;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: linear-gradient(to right, #00ECBC, #007ADF);
+}
+
+/* style the navbar*/
+
+.navbar {
+    position: absolute;
+    height: 10vh;
+    width: 100%;
+    top: 0;
+    z-index: 999;
+    border-bottom: 2px solid aliceblue;
+}
+
+
+#logo {
+    display: block;
+}
+
+#logo img {
+    display: block;
+    border-radius: 50%;
+    width: 150px;
+    height: 130px;
+}
+
+#main-menu a {
+    text-decoration: none;
+    color: aliceblue;
+    overflow: hidden;
+}
+
+
+#main-menu li,
+ul {
+    display: flex;
+    float: right;
+    margin-right: 90px;
+    margin-top: -45px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#main-menu ul {
+    display: block;
+}
+
+#main-menu li {
+    font-family: var(--body-font);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#main-menu li:hover {
+    border-radius: 8px;
+    background: transparent;
+    box-shadow: 0 0 10px rgb(61, 60, 61);
+    padding: 10px;
+}
+
+/* style the navbar end*/
+/* style the page */
+.page-title h1 {
+    font-family: var(--header-font);
+    font-size: 60px;
+    color: var(--orange);
+    text-align: center;
+    padding-top: 3em;
+}
+
+.details {
+    padding: 20px;
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+   
+}
+
+.page-details {
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr 1fr; 
+    grid-template-rows: 1fr 1fr; 
+    gap: 10px 10px; 
+    grid-template-areas: 
+      "div1 div1 div2 div3"
+      "div1 div1 div4 div5"; 
+  }
+  .div1 { grid-area: div1; }
+  .div2 { grid-area: div2; }
+  .div3 { grid-area: div3; }
+  .div4 { grid-area: div4; }
+  .div5 { grid-area: div5; }
+
+  .div2 img, .div3 img, .div4 img, .div5 img {
+    width: 300px;
+    height: 200px; 
+    border-radius: 25px;
+}
+
+.book{
+    margin-left: 150px;
+    border: 2px solid aliceblue;
+    border-radius: 50px;
+    width:60%;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.book h3{
+    text-align: center;
+    margin-left: 65px;
+    font-family: var(--header-font);
+    font-size: 30px;
+    color: var(--orange);
+    width:70%;
+}
+
+.book
+p,h4 {
+    font-family: var(--header-font);
+    font-size: 30px;
+    color: var(--orange);
+    width:70%;
+    margin-left: 70px;
+    margin-top: 20px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.book button {
+    width:70%;
+    font-family: var(--header-font);
+    font-size: 40px;
+    color: #0392ff;
+    background: var(--orange);
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    margin-top: 2em;
+    margin-left: 2em;
+}
+
+.details button:hover {
+    color: var(--orange);
+    background-image: linear-gradient(to right, #00ECBC, #007ADF);
+}
+
+
+/* style the page end */
+/* style the modal */
+#modal-content {
+    display: none;
+    position: fixed;
+    top: 150px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+#modal-header .close-modal {
+    font-size: 30px;
+    float: right;
+    cursor: pointer;
+    color: #2696E9;
+}
+
+/* style the modal end*/
+/* style the payment*/
+#modal-body {
+    margin-left: 300px;
+    display: grid;
+    font-family: var(--body-font);
+    width: 750px;
+    height: 500px;
+    border: 1px solid;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    justify-content: space-around;
+    margin-bottom: 50px;
+}
+
+#modal-body h1 {
+    text-align: center;
+}
+
+.first-row {
+    display: flex;
+}
+
+.owner {
+    width: 100%;
+    margin-right: 40px;
+}
+
+.input-field {
+    border: 1px solid #999;
+}
+
+.input-field input {
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 10px;
+}
+
+.selection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.selection select {
+    padding: 10px 20px;
+}
+
+.btn-payment {
+    background-color: #2696E9;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 18px;
+    transition: 0.5s;
+    width: 15em;
+    margin-left: 250px;
+    border-radius: 14px;
+    cursor: pointer;
+}
+
+.btn-payment:hover {
+    background-color: rgb(0, 51, 103);
+}
+
+.cards img {
+    width: 100px;
+}

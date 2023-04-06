@@ -1,0 +1,360 @@
+:root {
+    --body-font: 'Montserrat', sans-serif;
+    --header-font: 'Montserrat', sans-serif;
+    --color1: rgb(27, 27, 27);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    min-height: 100vh;
+    background-image: url(../Images/weather1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* style the navbar*/
+
+
+.navbar{
+    position:fixed;
+    border-bottom: 2px solid aliceblue;
+    height: 10vh;
+    width:100%;
+}
+
+#logo {
+    display: block;
+}
+
+#logo img {
+    display: block;
+    border-radius: 50%;
+    width: 150px;
+    height: 130px;
+}
+
+#main-menu a {
+    text-decoration: none;
+    color: aliceblue;
+    overflow: hidden;
+}
+
+
+#main-menu li, ul {
+    display:flex;
+    float: right;
+    margin-right: 50px;
+    margin-top: -45px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#main-menu ul {
+    display: block;
+}
+
+#main-menu li {
+    font-family: var(--body-font);
+    font-size: 20px;
+    font-weight:bold;
+}
+
+#main-menu li:hover {
+    border-radius: 8px;
+    background: transparent;
+    box-shadow: 0 0 10px rgb(61, 60, 61);
+    padding: 10px;
+}
+
+/*hamburger*/
+
+
+.hamburger {
+    display: none;
+
+}
+
+.hamburger .bar,
+.hamburger:after,
+.hamburger:before {
+    display: none;
+
+}
+
+
+.mobile-nav {
+    display: none;
+
+}
+
+.mobile-nav a {
+    display: none;
+    list-style-type: none;
+}
+
+@media screen and (max-width: 1050px) {
+    #main-menu li {
+        font-size: 15px;
+    }
+}
+
+
+@media screen and (max-width: 890px) {
+    .navbar {
+        display: none;
+    }
+
+    #logo1 {
+        display: block;
+    }
+
+    #logo1 img {
+        display: block;
+        border-radius: 30%;
+        width: 100px;
+        height: 90px;
+        margin-left: 50px;
+        margin-top: 0;
+    }
+
+    .hamburger {
+        position: relative;
+        display: block;
+        width: 35px;
+        appearance: none;
+        cursor: pointer;
+        background: none;
+        outline: none;
+        border: none;
+        float: right;
+        margin-top: 15px;
+    }
+
+    .hamburger .bar,
+    .hamburger:after,
+    .hamburger:before {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 5px;
+        background-color: rgb(0, 255, 238);
+        margin: 6px 0px;
+        transition: 0.4s;
+    }
+
+    .hamburger.is-active:before {
+        transform: rotate(-45deg) translate(-8px, -8px);
+    }
+
+    .hamburger.is-active:after {
+        transform: rotate(45deg) translate(-23px, -8px);
+
+    }
+
+    .hamburger.is-active .bar {
+        opacity: 0;
+    }
+
+    .mobile-nav {
+        margin-top: 70px;
+        position: fixed;
+        top: 0;
+        left: 100%;
+        width: 100%;
+        min-height: 200px;
+        display: block;
+        z-index: 98;
+        background-image: linear-gradient(to right, #00ECBC, #007ADF);
+        list-style: none;
+        padding-top: 120px;
+        transition: 0.4s;
+    }
+
+    .mobile-nav.is-active {
+        left: 0;
+    }
+
+    .mobile-nav a {
+        display: block;
+        font-size: 20px;
+        font-family: var(--body-font);
+        width: 50%;
+        max-width: 200px;
+        margin: 0 auto 16px;
+        text-align: center;
+        padding: 12px 16px;
+        color: aliceblue;
+        text-decoration: none;
+        border-radius: 8px;
+    }
+
+    .mobile-nav a:hover {
+        color: #007ADF;
+        background-color: aliceblue;
+    }
+}
+
+@media screen and (max-width: 650px){
+    .mobile-nav a{
+        margin-right: 500px;
+    }
+}
+/* style the navbar end */
+/* style weather */
+.weather-app{
+    color:aliceblue;
+    position:relative;
+    transition: 500ms;
+    opacity: 1;
+}
+
+.weather-app::before {
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:  rgba(0,0,0,0.3);
+    z-index:0;
+}
+
+.container {
+position: absolute;
+top:30em;
+left:0;
+width:100%;
+height:100%;
+display:flex;
+flex-direction:row;
+font-family: var(--body-font);
+}
+
+.container .temp{
+    margin-left:50px;
+    font-size:85px;
+}
+
+.container .name{
+    margin-left:50px;
+    margin-top:30px;
+    font-size:45px;
+}
+
+.container .weather{
+    font-size:25px;
+    margin-left: 50px;
+    margin-top:45px;
+}
+
+.panel{
+    position:absolute;
+    width:40%;
+    height:60%;
+    top:11em;
+    right:0;
+    background: rgba(110,110,110,0.25);
+    box-shadow: 0 8px 32px 0 rgba(0,0,0,0.3);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    z-index: 1;
+    padding: 3em 2em;
+}
+
+.panel form{
+    margin-bottom: 3em;
+}
+
+.submit {
+    position: absolute;
+    top:1em;
+    right:1em;
+    padding: 1em;
+    margin:0;
+    border:none;
+    outline:none;
+    background: #2696E9;
+    color:aliceblue;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition:0.4s;
+}
+
+.submit:hover {
+    background: aliceblue;
+    color:#2696E9;
+}
+
+.search{
+    background: none;
+    border: none;
+    border-bottom: 1px solid aliceblue;
+    padding:0 1em 0.5em 0;
+    width:80%;
+    color:aliceblue;
+    font-size: 1.1em;
+    font-family: var(--header-font);
+}
+
+.search:focus{
+  outline: none;
+}
+
+.search::placeholder{
+    color:aliceblue;
+}
+
+.panel ul{
+    padding-top: 4em;
+    padding-right: 20em;
+    display:flex;
+    flex-direction: column;
+    font-size: 1.1em;
+    font-family: var(--body-font);
+    color:aliceblue;
+    list-style-type: none;
+}
+
+.panel ul li{
+    margin: 1.5em 0;
+}
+
+.panel ul h4{
+    font-size: 1.8em;
+} 
+@media screen and (max-width: 1050px) {
+    .panel, .container{
+        position: relative;
+        width: 100%;
+        top: 12em;
+     }
+}
+
+
+@media screen and (max-width :800px) {
+    .panel, .container{
+       position: relative;
+       width: 90%;
+    }
+
+    .container .temp {
+        font-size: 30px;
+    }
+    .container .name {
+        font-size: 30px;
+    }
+    .container .weather {
+        font-size: 30px;
+    }
+
+    .details{
+        float:left;
+    }
+    
+}
+

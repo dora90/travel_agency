@@ -1,0 +1,44 @@
+/* style the navbar */
+.footer {
+    border-top: 2px solid aliceblue;
+    width: auto;
+    
+    background-color: black;
+}
+
+.footer-title {
+    color: aliceblue;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2em;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.footer-info {
+    display: flex;
+    font-size: 60px;
+   
+
+}
+
+.footer-info ul {
+    margin: 1em auto;
+}
+
+.footer-info a {
+    color: aliceblue;
+}
+
+.footer-info li {
+    padding: 15px;
+    padding-right: 50px;
+    list-style-type: none;
+}
+
+.footer-info li:hover {
+    color: aliceblue;
+    font-size: 1.5em;
+    filter: drop-shadow(70px 40px 4px aliceblue);
+}
